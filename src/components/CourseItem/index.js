@@ -2,6 +2,8 @@ import {Component} from 'react'
 
 import Loader from 'react-loader-spinner'
 
+import Header from '../Header'
+
 import {
   CourseItemPage,
   CourseItemContainer,
@@ -105,7 +107,12 @@ class CourseItem extends Component {
   }
 
   render() {
-    return this.renderPage()
+    return (
+      <>
+        <Header />
+        {this.renderPage()}
+      </>
+    )
   }
 }
 
