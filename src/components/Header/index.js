@@ -1,14 +1,17 @@
-import {ReactLink, Navbar, HeaderLogo} from './styledComponents'
+import {Link} from 'react-router-dom'
+
+import './index.css'
 
 const Header = () => (
-  <Navbar>
-    <ReactLink to="/">
-      <HeaderLogo
+  <nav className="navbar">
+    <Link className="react-link" to="/">
+      <img
+        className="header-logo"
         alt="website logo"
         src="https://assets.ccbp.in/frontend/react-js/tech-era/website-logo-img.png"
       />
-    </ReactLink>
-  </Navbar>
+    </Link>
+  </nav>
 )
 
 export default Header

@@ -1,23 +1,12 @@
 import {Component} from 'react'
 
+import {Link} from 'react-router-dom'
+
 import Loader from 'react-loader-spinner'
 
 import Header from '../Header'
 
-import {
-  Home,
-  HomeHeading,
-  CoursesList,
-  ReactLink,
-  CourseItem,
-  CourseItemImg,
-  CourseName,
-  Failure,
-  FailureImg,
-  FailureHeading,
-  FailurePara,
-  RetryButton,
-} from './styledComponents'
+import './index.css'
 
 class TechEra extends Component {
   state = {isLoading: '', dataList: ''}
@@ -56,38 +45,47 @@ class TechEra extends Component {
   )
 
   renderFailure = () => (
-    <Failure>
-      <FailureImg
+    <div className="failure">
+      <img
+        className="failure-img"
         alt="failure view"
         src="https://assets.ccbp.in/frontend/react-js/tech-era/failure-img.png"
       />
-      <FailureHeading>Oops! Something Went Wrong</FailureHeading>
-      <FailurePara>
+      <h1 className="failure-heading">Oops! Something Went Wrong</h1>
+      <p className="failure-para">
         We cannot seem to find the page you are looking for.
-      </FailurePara>
-      <RetryButton onClick={this.getData} type="button">
+      </p>
+      <button className="retry-button" onClick={this.getData} type="button">
         Retry
-      </RetryButton>
-    </Failure>
+      </button>
+    </div>
   )
 
   renderSuccess = () => {
     const {dataList} = this.state
 
     return (
-      <Home>
-        <HomeHeading>Courses</HomeHeading>
-        <CoursesList>
+      <div className="home">
+        <h1 className="home-heading">Courses</h1>
+        <ul className="courses-list">
           {dataList.courses.map(each => (
-            <ReactLink key={each.id} to={`/courses/${each.id}`}>
-              <CourseItem>
-                <CourseItemImg src={each.logoUrl} alt={each.name} />
-                <CourseName>{each.name}</CourseName>
-              </CourseItem>
-            </ReactLink>
+            <Link
+              className="react-link"
+              key={each.id}
+              to={`/courses/${each.id}`}
+            >
+              <li className="course-items">
+                <img
+                  className="course-item-img"
+                  src={each.logoUrl}
+                  alt={each.name}
+                />
+                <p className="course-name ">{each.name}</p>
+              </li>
+            </Link>
           ))}
-        </CoursesList>
-      </Home>
+        </ul>
+      </div>
     )
   }
 

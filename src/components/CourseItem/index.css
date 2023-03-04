@@ -1,60 +1,59 @@
-import styled from 'styled-components'
-
-export const CourseItemPage = styled.div`
+.course-item-page {
   flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 5%;
-`
+}
 
-export const CourseItemContainer = styled.div`
+.course-item-container {
   display: flex;
-`
+}
 
-export const CourseItemImg = styled.img`
+.course-item-img {
   width: 40%;
-`
+}
 
-export const DetailsContainer = styled.div`
+.details-container {
   padding: 3%;
-`
+}
 
-export const ItemName = styled.h1`
+.item-name {
   font-size: 24px;
   color: #1e293b;
   margin-top: 0;
-`
+}
 
-export const ItemDescription = styled.p`
+.item-description {
   font-size: 20px;
   font-weight: 600;
   color: #64748b;
   line-height: 2;
-`
+}
 
-export const Failure = styled.div`
+.failure {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`
+}
 
-export const FailureImg = styled.img`
+.failure-img {
   width: 55%;
-`
+}
 
-export const FailureHeading = styled.h1`
+.failure-heading {
   font-size: 38px;
   color: #1e293b;
-`
+}
 
-export const FailurePara = styled.p`
+.failure-para {
   font-size: 18px;
   color: #64748b;
-`
-export const RetryButton = styled.button`
+}
+
+.retry-button {
   outline: none;
   border: none;
   background-color: #4656a1;
@@ -63,4 +62,4 @@ export const RetryButton = styled.button`
   padding: 8px;
   width: 80px;
   text-align: center;
-`
+}

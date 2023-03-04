@@ -4,19 +4,7 @@ import Loader from 'react-loader-spinner'
 
 import Header from '../Header'
 
-import {
-  CourseItemPage,
-  CourseItemContainer,
-  CourseItemImg,
-  DetailsContainer,
-  ItemName,
-  ItemDescription,
-  Failure,
-  FailureImg,
-  FailureHeading,
-  FailurePara,
-  RetryButton,
-} from './styledComponents'
+import './index.css'
 
 class CourseItem extends Component {
   state = {isLoading: '', dataList: ''}
@@ -60,34 +48,39 @@ class CourseItem extends Component {
   )
 
   renderFailure = () => (
-    <Failure>
-      <FailureImg
+    <div className="failure">
+      <img
+        className="failure-img"
         alt="failure view"
         src="https://assets.ccbp.in/frontend/react-js/tech-era/failure-img.png"
       />
-      <FailureHeading>Oops! Something Went Wrong</FailureHeading>
-      <FailurePara>
+      <h1 className="failure-heading ">Oops! Something Went Wrong</h1>
+      <p className="failure-para">
         We cannot seem to find the page you are looking for.
-      </FailurePara>
-      <RetryButton onClick={this.getData} type="button">
+      </p>
+      <button className="retry-button" onClick={this.getData} type="button">
         Retry
-      </RetryButton>
-    </Failure>
+      </button>
+    </div>
   )
 
   renderSuccess = () => {
     const {dataList} = this.state
 
     return (
-      <CourseItemPage>
-        <CourseItemContainer>
-          <CourseItemImg alt={dataList.name} src={dataList.imageUrl} />
-          <DetailsContainer>
-            <ItemName>{dataList.name}</ItemName>
-            <ItemDescription>{dataList.description}</ItemDescription>
-          </DetailsContainer>
-        </CourseItemContainer>
-      </CourseItemPage>
+      <div className="course-item-page">
+        <div className="course-item-container">
+          <img
+            className="course-item-img"
+            alt={dataList.name}
+            src={dataList.imageUrl}
+          />
+          <div className="details-container">
+            <h1 className="item-name ">{dataList.name}</h1>
+            <p className="item-description ">{dataList.description}</p>
+          </div>
+        </div>
+      </div>
     )
   }
 

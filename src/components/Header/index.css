@@ -1,0 +1,15 @@
+.react-link {
+  text-decoration: none;
+
+}
+
+.navbar {
+  width: 100vw;
+  background-color: #f1f5f9;
+}
+
+.header-logo {
+  width: 240px;
+  padding: 2%;
+  padding-left: 5%;
+}
